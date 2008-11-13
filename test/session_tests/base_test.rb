@@ -141,10 +141,10 @@ module SessionTests
     
     def test_inspect
       session = UserSession.new
-      assert_equal "#<UserSession {:login=>nil, :password=>\"<protected>\"}>", session.inspect
+      assert_equal "#<UserSession #{{:login=>nil, :password=>"<protected>"}.inspect}>", session.inspect
       session.login = "login"
       session.password = "pass"
-      assert "#<UserSession {:login=>\"login\", :password=>\"<protected>\"}>" == session.inspect || "#<UserSession {:password=>\"<protected>\", :login=>\"login\"}>" == session.inspect
+      assert "#<UserSession #{{:login=>"login", :password=>"<protected>"}.inspect}>" == session.inspect || "#<UserSession {:password=>\"<protected>\", :login=>\"login\"}>" == session.inspect
     end
     
     def test_new_session
